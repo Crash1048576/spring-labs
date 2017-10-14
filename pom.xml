@@ -13,6 +13,7 @@
         <module>spring-lab3</module>
         <module>spring-lab4</module>
         <module>spring-lab5</module>
+        <module>spring-lab6</module>
     </modules>
 
 </project>
