@@ -11,6 +11,7 @@
 
     <modules>
         <module>spring-lab3</module>
+        <module>spring-lab4</module>
     </modules>
 
 </project>
