@@ -48,7 +48,7 @@ public class CountryDaoImplTest {
     }
 
     @Test
-    public void testGetCountryByName() {
+    public void testGetByName() {
 
         Country country = countryDao.getCountryByName("Australia");
         assertEquals(exampleCountry, country);
