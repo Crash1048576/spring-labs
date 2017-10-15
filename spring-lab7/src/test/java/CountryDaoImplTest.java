@@ -10,8 +10,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-//import org.apache.commons.logging.Log;
-//import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Illustrates basic use of Hibernate as a JPA provider.
@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration("classpath:application-context.xml")
 public class CountryDaoImplTest {
 
-//	private static Log log = LogFactory.getLog(CountryDaoImplTest.class);
+	private static Log log = LogFactory.getLog(CountryDaoImplTest.class);
 
     private Country exampleCountry = new Country("Australia", "AU");
 
@@ -43,6 +43,7 @@ public class CountryDaoImplTest {
         countryDao.save(new Country("Canada", "CA"));
 
         List<Country> countryList = countryDao.getAllCountries();
+
         assertEquals(2, countryList.size());
     }
 

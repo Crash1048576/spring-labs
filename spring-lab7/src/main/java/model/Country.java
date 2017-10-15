@@ -1,7 +1,12 @@
 package model;
 
+import org.hibernate.annotations.GeneratorType;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "COUNTRY")
 public class Country implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -26,6 +31,8 @@ public class Country implements Serializable {
         this.codeName = codeName;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -34,6 +41,7 @@ public class Country implements Serializable {
         this.id = id;
     }
 
+    @Column(name = "NAME")
     public String getName() {
         return name;
     }
@@ -42,6 +50,7 @@ public class Country implements Serializable {
         this.name = name;
     }
 
+    @Column(name = "CODE_NAME")
     public String getCodeName() {
         return codeName;
     }

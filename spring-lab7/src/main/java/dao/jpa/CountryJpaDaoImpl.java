@@ -11,23 +11,36 @@ import java.util.List;
 public class CountryJpaDaoImpl extends AbstractJpaDao implements CountryDao {
 
     public void save(Country country) {
-//		TODO: Implement it
-        EntityManager em = null;
-
+        EntityManager em = emf.createEntityManager();
         if (em != null) {
+            em.persist(country);
             em.close();
         }
     }
 
     public List<Country> getAllCountries() {
-//	TODO: Implement it
-        return null;
-    }// getAllcountries()
+        List<Country> countryList = null;
+        EntityManager em = emf.createEntityManager();
+        if (em != null) {
+            countryList = em.createQuery("from Country", Country.class).getResultList();
+            em.close();
+        }
+
+        return countryList;
+    }
 
     public Country getCountryByName(String name) {
-//		TODO: Implement it
+        EntityManager em = emf.createEntityManager();
+        Country country = null;
+        if (em != null) {
+            country = em
+                    .createQuery("SELECT c FROM Country c WHERE c.name LIKE :name",
+                            Country.class).setParameter("name", name)
+                    .getSingleResult();
+            em.close();
+        }
 
-        return null;
+        return country;
     }
 
 }
