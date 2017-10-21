@@ -1,4 +1,3 @@
-import service.CountryService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.IllegalTransactionStateException;
 import org.springframework.transaction.annotation.Propagation;
+import service.CountryService;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -15,9 +15,9 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:application-context.xml")
 public class DeclarativeTransactionTest extends JdbcTest {
-    
-	@Autowired
-	private CountryService countryService;
+
+    @Autowired
+    private CountryService countryService;
 
     @Before
     public void setUp() throws Exception {
