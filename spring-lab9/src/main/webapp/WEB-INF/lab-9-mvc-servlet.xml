@@ -31,4 +31,8 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+
+	<bean id="CountryDao" class="dao.HsqlCountryDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 </beans>
