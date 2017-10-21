@@ -15,6 +15,7 @@
         <module>spring-lab5</module>
         <module>spring-lab6</module>
         <module>spring-lab7</module>
+        <module>spring-lab8</module>
     </modules>
 
     <properties>
